@@ -3,21 +3,61 @@ import styled from 'styled-components';
 
 function Header(props) {
     return (
-        <div>
+        
             <Nav>
-              <h1>Header</h1>
-              <h1>Header</h1>
+                <Logo>
+                    <img src="/images/logo.svg" />
+                </Logo>
+                <NavMenu>
+                    NavMenu
+                </NavMenu>
             </Nav>
-        </div>
+        
     )
 }
 
 const Nav = styled.div`
     position: fixed;
-    width: 100%;
     top: 0;
-    background-color: black;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: #090b13;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 36px;
+    letter-spacing: 16px;
+    z-index: 3
 `
+const Logo = styled.a`
+    padding: 0;
+    width: 80px;
+    margin-top: 4px;
+    max-height: 70px;
+    font-size: 0;
+    display: inline-block;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+`
+const NavMenu = styled.div`
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    margin-right: auto;
+    margin-left: 25px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+
+`
+
 export default Header
